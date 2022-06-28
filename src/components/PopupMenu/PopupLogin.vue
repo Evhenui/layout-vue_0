@@ -1,7 +1,7 @@
 <template>
   <PopupMenu>
     <template v-slot:header>
-      <h1>Login</h1>
+      <h1 class="title">Login</h1>
     </template>
     <template v-slot:body>
       <form class="form" action="" method="">
@@ -28,7 +28,7 @@
           />
         </div>
         <footer class="footer-popup">
-          <button class="btn-login popup-btn-login" type="submit">
+          <button class="popup-btn-send btn" type="submit">
             Send
           </button>
         </footer>
@@ -53,5 +53,9 @@ export default {
 <style lang="scss">
 .form > .password-login {
   margin-bottom: 40px;
+}
+.footer-popup {
+  display: flex;
+  justify-content: center;
 }
 </style>

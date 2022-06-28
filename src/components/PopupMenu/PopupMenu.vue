@@ -51,7 +51,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 10px 20px;
-  background-color: #fff;
+  background: #E3EBF1;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -63,13 +63,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0 0 10px 0;
-  border-bottom: 2px solid #230b59;
+  border-bottom: 1px solid #536D7A;
   & > h1 {
-    letter-spacing: 0.5px;
-    font-family: "Roboto";
-    font-size: 20px;
-    line-height: 0;
-    color: #230b59;
+    font-family: "Bitter", serif;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 52px;
+    color: #1D2F38;
   }
   .modal-header-close-btn {
     cursor: pointer;
@@ -103,19 +103,20 @@ export default {
 .modal-body {
   padding: 40px 0;
   margin: 0 0 20px 0;
-  border-bottom: 2px solid #230b59;
+  border-bottom: 1px solid #536D7A;
   & > form > div {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     & > label {
-      font-family: "Roboto", sans-serif;
-      line-height: 28px;
+      font-family: "Raleway", serif;
+      font-weight: 400;
+      font-size: 18px;
       color: #b7b7c0;
     }
     & > ::placeholder {
-      font-family: "Roboto", sans-serif;
+      font-family: "Raleway", serif;
       line-height: 28px;
       color: #070707;
     }
@@ -127,8 +128,10 @@ export default {
       &:active,
       &:read-only,
       &:read-write {
-        font-family: "Roboto", sans-serif;
+        font-family: "Raleway", serif;
         color: #070707;
+        outline: 0;
+        outline-offset: 0;
       }
     }
   }
