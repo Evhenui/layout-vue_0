@@ -1,0 +1,118 @@
+.item-link {
+    font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      color: #1D2F38;
+      &:hover {
+        color: #158cc7;
+      }
+}
+
+.btn {
+  background: #17A550;
+  border-radius: 5px;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: all .2s ;
+  &:hover {
+    box-shadow: 5px 6px 7px 3px rgba(0,0,0,0.84);
+  }
+}
+
+.title {
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 47px;
+  line-height: 52px;
+  color: #1D2F38;
+}
+.subtitle {
+  font-family: 'Raleway', serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.link-view {
+  font-family: "Raleway", "sans-serif";
+    font-weight: 400;
+    font-size: 16px;
+    color: #1d2f38;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 26px;
+    &:hover {
+      color: #158cc7;
+    }
+    
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      background-image: url("@/assets/play.svg");
+      background-repeat: no-repeat;
+      transform: translate(0px, 0px);
+    }
+    
+}
+
+.image-blocks {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  &__wrapper{
+    
+    width: 100%;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+  &__discription {
+    font-size: 15px;
+    max-width: 250px;
+
+  }
+}
+
+.input {
+  margin: 0 0 30px 0;
+  border: 1px solid #AABCC5;
+  border-radius: 5px;
+  padding: 10px 280px 10px 10px;
+  
+   &::placeholder {
+      font-family: 'Raleway', sans-serif;   
+      font-weight: 400;
+      font-size: 12px;
+      color: #536D7A;
+   }
+    &:focus,
+    &:active,
+    &:read-only,
+    &:read-write {
+      font-family: 'Raleway', sans-serif;  
+      color: #536D7A;
+      outline: 0;
+      outline-offset: 0;
+    }
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
