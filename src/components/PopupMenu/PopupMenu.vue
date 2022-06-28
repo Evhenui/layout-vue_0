@@ -123,7 +123,7 @@ export default {
     & > input {
       border: 1px solid #b7b7c0;
       border-radius: 10px;
-      padding: 3px 0 3px 5px;
+      padding: 9px 0 9px 5px;
       &:focus,
       &:active,
       &:read-only,

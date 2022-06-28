@@ -66,5 +66,5 @@ export default {
     { itemName: "Affiliate Disclosure" },
   ],
 
-  popupMenu: { active: false },
+  popupMenu: { active: false, activeBuy: false },
 };

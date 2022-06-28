@@ -21,16 +21,30 @@
           professional and polished site ready to start and grow their affiliate
           marketing business in any niche.
         </p>
-        <button class="easy-to-use-section__btn-green-small btn">
+        <button
+          class="easy-to-use-section__btn-green-small btn"
+          @click="popupMenuBuyOpen"
+        >
           Buy this Template
         </button>
       </div>
     </div>
+    <Transition name="modal">
+      <PopupBuy v-if="popupMenu.activeBuy" @close="popupMenuBuyClose" />
+    </Transition>
   </section>
 </template>
 
 <script>
-export default {};
+import PopupBuy from "../PopupMenu/PopupBuy.vue";
+import PopupMenu from "../PopupMenu/PopupMenu.vue";
+import { mapGetters, mapMutations } from "vuex";
+
+export default {
+  components: { PopupBuy, PopupMenu },
+  computed: mapGetters(["headerMenuItems", "popupMenu"]),
+  methods: mapMutations(["popupMenuBuyOpen", "popupMenuBuyClose"]),
+};
 </script>
 
 <style lang="scss">

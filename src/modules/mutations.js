@@ -5,4 +5,10 @@ export default {
   popupMenuClose(state) {
     state.popupMenu.active = false;
   },
+  popupMenuBuyOpen(state) {
+    state.popupMenu.activeBuy = true;
+  },
+  popupMenuBuyClose(state) {
+    state.popupMenu.activeBuy = false;
+  },
 };
