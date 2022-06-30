@@ -54,7 +54,7 @@ export default {
     onCreatePost() {
       axios.post('http://localhost:3000/posts', {
         email: this.email, password: this.password
-      }).then((response)=>{location.reload()})
+      }).then(()=>{location.reload()})
       .catch((error) => {console.log(error)});
       
     }
