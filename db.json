@@ -1,24 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "email": "ddd@ddd",
-      "password": "dasdasdas",
-      "id": 2
-    },
-    {
-      "email": "some@practic",
-      "password": "aaaaaaaa",
-      "id": 3
-    },
-    {
-      "email": "qwe@WEQWE",
-      "password": "QWEQWE",
-      "id": 4
+      "email": "11@111",
+      "password": "123123123",
+      "id": 1
     }
   ],
   "comments": [
