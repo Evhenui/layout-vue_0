@@ -4,7 +4,7 @@
       <h1 class="title">Login</h1>
     </template>
     <template v-slot:body>
-      <form class="form" action="" method="">
+      <form class="form" @submit.prevent="onCreatePost">
         <div class="input-email">
           <label for="email">Email</label>
           <input
@@ -28,7 +28,7 @@
           />
         </div>
         <footer class="footer-popup">
-          <button class="popup-btn-send btn" type="submit">
+          <button class="popup-btn-send btn" type="submit" >
             Send
           </button>
         </footer>
@@ -39,14 +39,27 @@
 
 <script>
 import PopupMenu from "./PopupMenu.vue";
+import axios from "axios";
+
+
 export default {
   data: () => ({
-    email: null,
-    password: null,
+    email: '',
+    password: ''
   }),
   components: {
     PopupMenu,
   },
+  methods: {
+    onCreatePost() {
+      axios.post('http://localhost:3000/posts', {
+        email: this.email, password: this.password
+      }).then((response)=>{location.reload()})
+      .catch((error) => {console.log(error)});
+      
+    }
+  },
+  
 };
 </script>
 

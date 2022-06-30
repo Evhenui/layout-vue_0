@@ -67,4 +67,6 @@ export default {
   ],
 
   popupMenu: { active: false, activeBuy: false },
+
+  
 };

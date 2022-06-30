@@ -100,15 +100,16 @@
 
 <script>
 import PopupMenu from "./PopupMenu/PopupMenu.vue";
-import { mapGetters, mapMutations } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 import PopupLogin from "./PopupMenu/PopupLogin.vue";
 
 export default {
   name: "Header",
-  computed: mapGetters(["headerMenuItems", "popupMenu"]),
+  computed: mapGetters(["headerMenuItems", "popupMenu", "PROFILE"]),
   components: { PopupMenu, PopupLogin },
-  methods: mapMutations(["popupMenuOpen", "popupMenuClose"]),
+  methods: {...mapMutations(["popupMenuOpen", "popupMenuClose"])},
 };
+
 </script>
 
 <style lang="scss">

@@ -14,9 +14,8 @@ export default {
   footerImg (state) {
     return state.footerImg;
   },
-
   popupMenu (state) {
     return state.popupMenu;
-  }
+  },
 
 };

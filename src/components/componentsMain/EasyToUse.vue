@@ -32,6 +32,7 @@
     <Transition name="modal">
       <PopupBuy v-if="popupMenu.activeBuy" @close="popupMenuBuyClose" />
     </Transition>
+
   </section>
 </template>
 
