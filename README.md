@@ -2,8 +2,8 @@
 
 ## Project setup
 ```
-npm install
-json-server --watch db.json
+npm install, json-server --watch db.json
+
 ```
 
 ### Compiles and hot-reloads for development
