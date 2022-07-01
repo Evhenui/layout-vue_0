@@ -32,7 +32,6 @@
     <Transition name="modal">
       <PopupBuy v-if="popupMenu.activeBuy" @close="popupMenuBuyClose" />
     </Transition>
-
   </section>
 </template>
 
@@ -86,6 +85,55 @@ export default {
 
   &__subtitle-bottom {
     max-width: 470px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .easy-to-use-section {
+    &__wrapper {
+      padding: 50px 20px;
+      gap: 20px;
+    }
+
+    &__main-text-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .easy-to-use-section__subtitle-top {
+      font-size: 15px;
+      max-width: 100%;
+    }
+
+    .easy-to-use-section__title-top {
+      font-size: 20px;
+      line-height: 34px;
+    }
+
+    .easy-to-use-section__subtitle-bottom {
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .easy-to-use-section {
+    &__main-img {
+      display: none;
+    }
+
+    &__main-text-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+    }
+
+    &__subtitle-top, &__title-top, &__subtitle-bottom {
+      max-width: 100%;
+    }
   }
 }
 </style>

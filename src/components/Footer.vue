@@ -68,7 +68,7 @@ export default {
 
 <style lang="scss">
 .footer {
-  padding: 60px 225px;
+  padding: 60px 125px;
   display: flex;
   justify-content: space-between;
   background: #F7F9FA;
@@ -167,5 +167,8 @@ export default {
     line-height: 18px;
     color: #1d2f38;
   }
+}
+@media (max-width: 767.98px) {
+  .footer {display: none;}
 }
 </style>

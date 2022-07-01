@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <a href="" class="header__link">
+    <a href="#" class="header__link">
       <img
         src="@/assets/logo.png"
         class="header__img-link"
@@ -9,7 +9,7 @@
         height="55"
       />
     </a>
-    <nav class="header__nav">
+    <nav class="header__nav" :class="{ active }">
       <ul class="header__nav-list">
         <li
           class="header__nav-item"
@@ -20,6 +20,7 @@
             item.itemName
           }}</a>
         </li>
+        <a class="list-login" @click="popupMenuOpen">Login</a>
       </ul>
     </nav>
     <div class="header__wrapper-btn-login" @click="popupMenuOpen">
@@ -90,11 +91,20 @@
           </svg>
         </a>
       </div>
-      <a class="item-link">Sign up</a>
+      <a class="item-link">Login</a>
     </div>
     <Transition name="modal">
       <PopupLogin v-if="popupMenu.active" @close="popupMenuClose" />
     </Transition>
+    <div class="header__wrapper-burger">
+      <div
+        class="header__burger"
+        @click="active = !active"
+        :class="active ? 'activeBurger' : ''"
+      >
+        <span></span>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -105,16 +115,22 @@ import PopupLogin from "./PopupMenu/PopupLogin.vue";
 
 export default {
   name: "Header",
+  data() {
+    return {
+      active: false,
+      menuRegister: "none",
+      popMenu: "none",
+    };
+  },
   computed: mapGetters(["headerMenuItems", "popupMenu", "PROFILE"]),
   components: { PopupMenu, PopupLogin },
-  methods: {...mapMutations(["popupMenuOpen", "popupMenuClose"])},
+  methods: { ...mapMutations(["popupMenuOpen", "popupMenuClose"]) },
 };
-
 </script>
 
 <style lang="scss">
 .header {
-  padding: 15px 225px;
+  padding: 15px 125px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,24 +141,34 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
-  &__link {
-    display: inline-block;
-    max-width: 155px;
+  z-index: 2;
+  gap: 30px;
+  &::before {
+    content: "";
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+  }
+  &__link {
+    z-index: 2;
+    margin: 0 30px 0 0;
+    display: inline-block;
     font-size: 0;
   }
-  &__img-link {
-    width: 100%;
-    height: auto;
-  }
-
   &__nav-list {
     display: flex;
     gap: 55px;
+    .list-login {
+      display: none;
+    }
   }
 
   &__nav-item {
+    z-index: 2;
     &:hover a::before {
       transform: translate(-2px, -2px);
       transition: all 0.5s;
@@ -167,6 +193,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 5px;
+    z-index: 2;
     transition: all 0.2s;
     &:hover .header__link-letter {
       cursor: pointer;
@@ -204,5 +231,117 @@ export default {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+.header__wrapper-burger {
+  display: none;
+  .header__burger {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    &::before,
+    &::after {
+      content: "";
+      background-color: #72727e;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s;
+    }
+    &::before {
+      top: 3px;
+    }
+    &::after {
+      bottom: 3px;
+    }
+    & > span {
+      position: absolute;
+      background-color: #72727e;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 14px;
+      transition: all 0.5s;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .header {
+    padding: 15px 25px;
+    gap: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .header {
+    padding: 15px 35px;
+    gap: 20px;
+
+    &__nav {
+      transition: top 0.3s;
+      position: fixed;
+      background: white;
+      top: -100%;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      border-bottom: 1px solid #b7b7c0;
+      .header__nav-list {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0 0 20px 0;
+        li > a {
+          font-size: 30px;
+          display: block;
+          padding-bottom: 24px;
+          &:hover {
+            color: #9b2b3a;
+          }
+        }
+        .list-login {
+          font-family: "Raleway", sans-serif;
+          display: block;
+          font-size: 30px;
+          color: #9b2b3a;
+        }
+        li {
+          margin: 0;
+          border-bottom: 1px solid #b7b7c0;
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .active {
+      top: 80px;
+    }
+    .header__wrapper-burger {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+      
+      .activeBurger {
+        & > span {
+          transform: scale(0);
+        }
+        &::before {
+          top: 13px;
+          transform: rotate(45deg);
+        }
+        &::after {
+          bottom: 15px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  .header__wrapper-btn-login {
+    display: none;
+  }
 }
 </style>

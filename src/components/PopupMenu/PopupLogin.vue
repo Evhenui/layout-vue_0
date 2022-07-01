@@ -28,9 +28,7 @@
           />
         </div>
         <footer class="footer-popup">
-          <button class="popup-btn-send btn" type="submit" >
-            Send
-          </button>
+          <button class="popup-btn-send btn" type="submit">Send</button>
         </footer>
       </form>
     </template>
@@ -41,25 +39,29 @@
 import PopupMenu from "./PopupMenu.vue";
 import axios from "axios";
 
-
 export default {
   data: () => ({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   }),
   components: {
     PopupMenu,
   },
   methods: {
     onCreatePost() {
-      axios.post('http://localhost:3000/posts', {
-        email: this.email, password: this.password
-      }).then(()=>{location.reload()})
-      .catch((error) => {console.log(error)});
-      
-    }
+      axios
+        .post("http://localhost:3000/posts", {
+          email: this.email,
+          password: this.password,
+        })
+        .then(() => {
+          location.reload();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
-  
 };
 </script>
 

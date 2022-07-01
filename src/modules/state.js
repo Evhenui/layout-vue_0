@@ -4,7 +4,7 @@ export default {
     { itemName: "Categories", img: require("@/assets/categories-menu.svg") },
     { itemName: "Blog", img: require("@/assets/blog-menu.svg") },
     { itemName: "Reviews", img: require("@/assets/reviews-menu.svg") },
-    { itemName: "Buying Guides", img: require("@/assets/buy-menu.svg") },
+    { itemName: "Buying", img: require("@/assets/buy-menu.svg") },
   ],
 
   latestImgBlocks: [
