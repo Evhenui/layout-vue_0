@@ -23,7 +23,11 @@
     </section>
     <section class="footer__central-section">
       <h1 class="footer__title title">Latest Articles</h1>
-      <div class="image-blocks" v-for="(item, index) in footerImg" :key="index">
+      <div
+        class="footer__image-blocks image-blocks"
+        v-for="(item, index) in footerImg"
+        :key="index"
+      >
         <div class="image-blocks__wrapper">
           <img :src="item.img" alt="" width="139" height="100" />
         </div>
@@ -71,7 +75,8 @@ export default {
   padding: 60px 125px;
   display: flex;
   justify-content: space-between;
-  background: #F7F9FA;
+  background: #f7f9fa;
+  gap: 20px;
   &__left-section {
     display: flex;
     flex-direction: column;
@@ -126,6 +131,8 @@ export default {
   .footer__input {
     padding: 120x 0;
     border-radius: 5px 0px 0px 5px;
+    max-width: 200px;
+    width: 100%;
   }
 
   .footer__btn-grey {
@@ -136,7 +143,7 @@ export default {
 
   &__nav {
     margin: 0 0 20px 0;
-    border-bottom: 1px solid #536D7A;
+    border-bottom: 1px solid #536d7a;
     padding: 0 0 25px 0;
   }
 
@@ -168,7 +175,29 @@ export default {
     color: #1d2f38;
   }
 }
+@media (max-width: 1160.98px) {
+  .footer__central-section {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer {
+    justify-content: space-around;
+    padding: 40px 25px;
+    .footer__input {
+      padding: 10px;
+    }
+  }
+}
 @media (max-width: 767.98px) {
-  .footer {display: none;}
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .footer__left-section {
+      align-items: center;
+    }
+  }
 }
 </style>

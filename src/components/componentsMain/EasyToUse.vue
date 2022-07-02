@@ -131,6 +131,11 @@ export default {
       gap: 30px;
     }
 
+    .easy-to-use-section__title-top{
+      line-height: 55px;
+      font-size: 48px;
+    }
+
     &__subtitle-top, &__title-top, &__subtitle-bottom {
       max-width: 100%;
     }

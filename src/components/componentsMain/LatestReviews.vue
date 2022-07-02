@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss">
 .latest-reviews {
-    margin: 0 0 100px 0;
+  margin: 0 0 100px 0;
   .latest-reviews__title {
     font-size: 38px;
     margin: 0 0 33px 0;
@@ -42,6 +42,7 @@ export default {
     justify-content: space-between;
     flex: 1 1 200px;
     margin: 0 0 40px 0;
+    gap: 5px;
   }
 
   &__item-img {
@@ -49,7 +50,7 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: #F7F9FA;
+    background: #f7f9fa;
     border-radius: 10px;
     min-height: 100%;
     overflow: hidden;
@@ -62,8 +63,8 @@ export default {
     max-width: 357px;
     width: 100%;
     img {
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -79,7 +80,27 @@ export default {
     max-width: 300px;
     flex: 1 1 auto;
   }
+}
+@media (max-width: 991.98px) {
+  .latest-reviews {
+    text-align: center;
+    .latest-reviews__title {
+      font-size: 48px;
+    }
 
+    &__latest-items-wrapper {
+      flex-direction: column;
+    }
+
+    &__item-img {
+      padding: 30px 0;
+      margin: 0 0 20px 0;
+      flex: 1;
+    }
+  }
 }
 
+@media (max-width: 767.98px) {
+
+}
 </style>

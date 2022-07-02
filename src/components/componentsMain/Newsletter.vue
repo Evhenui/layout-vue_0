@@ -34,12 +34,13 @@ export default {};
 <style lang="scss">
 .newsletter {
   &__wrapper {
-     background-image: url("@/assets/bg-image-newsletter.png");
+    background-image: url("@/assets/bg-image-newsletter.png");
     background-size: cover;
     padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 15px;
   }
 
   &__img-wrapper {
@@ -55,9 +56,6 @@ export default {};
     font-weight: 400;
     font-size: 30px;
     margin: 0 0 45px 0;
-    &::before {
-      content: "";
-    }
   }
 
   .newsletter__subtitle {
@@ -67,8 +65,6 @@ export default {};
     line-height: 24px;
     margin: 0 0 25px 0;
   }
-
-  
 
   .newsletter__btn-yellow {
     background: #ffc728;
@@ -85,9 +81,6 @@ export default {};
       background-image: none;
     }
   }
-  &__form {
-
-  }
   &__btns {
     button {
       margin: 0 15px 0 0;
@@ -97,11 +90,65 @@ export default {};
     }
   }
 }
-.title {
-}
-.subtitle {
-}
+@media (max-width: 991.98px) {
+  .newsletter {
+  &__wrapper {
+    padding: 50px;
+  }
 
-.btn {
+  .newsletter__title {
+    font-size: 30px;
+    margin: 0 0 15px 0;
+  }
+
+  .newsletter__subtitle {
+    max-width: 100%;
+    margin: 0 0 15px 0;
+  }
+  .newsletter__input {
+    padding: 10px 180px 10px 10px;
+  }
+  .newsletter__btn-yellow {
+    font-size: 15px;
+  }
+
+  .newsletter__link {
+    font-size: 15px;
+  }
+  }
+}
+@media (max-width: 767.98px) {
+    .newsletter {
+  &__wrapper {
+   padding: 20px;
+   flex-direction: column;
+   text-align: center;
+   align-items: center;
+  }
+  &__img-wrapper {
+    display: none;
+  }
+  .newsletter__title {
+    font-size: 48px;
+  }
+  .newsletter__input {
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+  }
+  }
+}
+@media (max-width: 330.98px) {
+  .newsletter {
+    .newsletter__title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .newsletter__input {
+    max-width: 150px;
+    width: 100%;
+    padding: 10px;
+  }
+  }
 }
 </style>
