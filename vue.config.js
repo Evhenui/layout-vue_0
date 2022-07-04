@@ -1,4 +1,5 @@
-const { defineConfig } = require('Evhenui/layout-vue_2/')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/layout_spa/'
+    : '/'
+}
